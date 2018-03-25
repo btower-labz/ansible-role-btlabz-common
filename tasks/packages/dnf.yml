@@ -1,0 +1,8 @@
+---
+
+- name: common | dnf | screen
+  dnf:
+    name: screen
+    state: present
+
+...

@@ -1,0 +1,78 @@
+---
+
+- name: common | apt | python is present
+  become: yes
+  become_method: sudo
+  raw: test -e /usr/bin/python || (apt -y update && apt install -y python-simplejson)
+  changed_when: False
+  tags:
+    - common
+    - pkg
+    - python
+
+- name: common | apt | screen is installed
+  apt:
+    name: screen
+    state: present
+    update_cache: yes
+  tags:
+    - common
+    - pkg
+
+- name: common | apt |curl and wget are installed
+  apt:
+    name: "{{ item.name }}"
+    state: present
+    update_cache: yes
+  with_items:
+    - { name: 'curl' }
+    - { name: 'wget' }
+  tags:
+    - common
+    - pkg
+
+- name: common | apt | scm tools are installed
+  apt:
+    name: "{{ item.name }}"
+    state: present
+    update_cache: yes
+  with_items:
+    - { name: 'git' }
+    - { name: 'subversion' }
+  tags:
+    - common
+    - pkg
+    - scm
+
+- name: common | apt | archivers are installed
+  apt:
+    name: "{{ item.name }}"
+    state: present
+    update_cache: yes
+  with_items:
+    - { name: 'unzip' }
+  tags:
+    - common
+    - pkg
+
+- name: common | apt | docs are in place
+  apt:
+    name: "{{ item.name }}"
+    state: present
+  with_items:
+    - { name: 'man' }
+  tags:
+    - common
+    - pkg
+
+- name: common | apt | uuid generation facilities
+  apt:
+    name: "{{ item.name }}"
+    state: present
+  with_items:
+    - { name: 'uuid-runtime' }
+  tags:
+    - common
+    - pkg
+
+...
