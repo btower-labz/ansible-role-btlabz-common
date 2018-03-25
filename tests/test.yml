@@ -28,6 +28,6 @@
       when: ansible_os_family == 'Debian'
 
   roles:
-    - role-btlabz-common
+    - btlabz-common-role
 
 ...
