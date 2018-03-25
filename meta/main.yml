@@ -44,28 +44,28 @@ galaxy_info:
   #   - 7
   #   - 99.99
 
-  platforms:
-    - name: Ubuntu
-      versions:
-        - xenial
-        - trusty
-    - name: Debian
-      versions:
-        - stretch
-        - jessie
-    - name: EL
-      versions:
-        - 7
-    - name: Fedora
-      versions:
-        - 26
-        - 25
-        - 24
+#  platforms:
+#    - name: Ubuntu
+#      versions:
+#        - xenial
+#        - trusty
+#    - name: Debian
+#      versions:
+#        - stretch
+#        - jessie
+#    - name: EL
+#      versions:
+#        - 7
+#    - name: Fedora
+#      versions:
+#        - 26
+#        - 25
+#        - 24
 
-  #platforms:
-  ##- name: Debian
-  #  versions:
-  #  - stretch
+  platforms:
+  - name: Debian
+    versions:
+      - stretch
 
   # Maximum 20 tags per role.
   # A single word. Alphanumeric characters.

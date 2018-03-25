@@ -4,33 +4,42 @@ sudo: required
 dist: trusty
 
 env:
-  - distribution: centos
-    version: 7
-    ansible_version: latest
-  - distribution: fedora
-    version: 26
-    ansible_version: latest
-  - distribution: fedora
-    version: 25
-    ansible_version: latest
-  - distribution: fedora
-    version: 24
-    ansible_version: latest
-  - distribution: ubuntu
-    version: xenial
-    ansible_version: latest
-  - distribution: ubuntu
-    version: trusty
-    ansible_version: latest
+#  - distribution: centos
+#    version: 7
+#    ansible_version: latest
+#  - distribution: fedora
+#    version: 26
+#    ansible_version: latest
+#  - distribution: fedora
+#    version: 25
+#    ansible_version: latest
+#  - distribution: fedora
+#    version: 24
+#    ansible_version: latest
+#  - distribution: ubuntu
+#    version: xenial
+#    ansible_version: latest
+#  - distribution: ubuntu
+#    version: trusty
+#    ansible_version: latest
   - distribution: debian
     version: stretch
     ansible_version: latest
   - distribution: debian
     version: stretch
-    ansible_version: 2.2.2.0
+    ansible_version: 2.4.3.0
   - distribution: debian
-    version: jessie
-    ansible_version: latest
+    version: stretch
+    ansible_version: 2.4.2.0
+  - distribution: debian
+    version: stretch
+    ansible_version: 2.4.1.0
+  - distribution: debian
+    version: stretch
+    ansible_version: 2.4.0.0
+#  - distribution: debian
+#    version: jessie
+#    ansible_version: latest
 
 services:
   - docker
