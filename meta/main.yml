@@ -46,7 +46,8 @@ galaxy_info:
 
   platforms:
   - name: Debian
-    versions: stretch
+    versions:
+    - stretch
 
   # Maximum 20 tags per role.
   # A single word. Alphanumeric characters.
