@@ -1,0 +1,81 @@
+---
+
+- name: common | constraints
+  import_tasks: 
+    - constraints.yml
+  tags:
+    - common
+    - constraints
+
+#- name: common | all packages are latest
+#  apt:
+#    name: '*'
+#    state: latest
+
+- name: common | screen is installed
+  apt:
+    name: screen
+    state: present
+    update_cache: yes
+  tags:
+    - common
+    - pkg
+
+- name: common | curl and wget are installed
+  apt:
+    name: "{{ item.name }}"
+    state: present
+    update_cache: yes
+  with_items:
+    - { name: 'curl' }
+    - { name: 'wget' }
+  tags:
+    - common
+    - pkg
+
+- name: common | scm tools are installed
+  apt:
+    name: "{{ item.name }}"
+    state: present
+    update_cache: yes
+  with_items:
+    - { name: 'git' }
+    - { name: 'subversion' }
+  tags:
+    - common
+    - pkg
+    - scm
+
+- name: common | archivers are installed
+  apt:
+    name: "{{ item.name }}"
+    state: present
+    update_cache: yes
+  with_items:
+    - { name: 'unzip' }
+  tags:
+    - common
+    - pkg
+
+- name: common | docs are in place
+  apt:
+    name: "{{ item.name }}"
+    state: present
+  with_items:
+    - { name: 'man' }
+  tags:
+    - common
+    - pkg
+
+- name: common | uuid generation facilities
+  apt:
+    name: "{{ item.name }}"
+    state: present
+  with_items:
+    - { name: 'uuid-runtime' }
+  tags:
+    - common
+    - pkg
+
+...
+
