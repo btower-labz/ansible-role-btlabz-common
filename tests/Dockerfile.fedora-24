@@ -1,5 +1,7 @@
 FROM fedora:24
 
+ARG ANSIBLE_VERSION=latest
+
 RUN dnf -y update
 
 RUN dnf -y install systemd && \

@@ -1,5 +1,7 @@
 FROM centos:7
 
+ARG ANSIBLE_VERSION=latest
+
 # Install systemd -- See https://hub.docker.com/_/centos/
 RUN yum -y swap -- remove fakesystemd -- install systemd systemd-libs
 RUN yum -y update; \
